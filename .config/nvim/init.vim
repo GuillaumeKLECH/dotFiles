@@ -1,26 +1,37 @@
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
-set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.dein')
-  call dein#begin('~/.dein')
+" Required:
+set runtimepath+=/Users/gklech/.dein/repos/github.com/Shougo/dein.vim
 
-  call dein#add('~/.dein/repos/github.com/Shougo')
+" Required:
+if dein#load_state('/Users/gklech/.dein')
+  call dein#begin('/Users/gklech/.dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/gklech/.dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('scrooloose/nerdtree')
   call dein#add('sheerun/vim-polyglot')
 
+  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
+" Required:
 filetype plugin indent on
-syntax on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif

@@ -67,6 +67,9 @@ plugins=(
   gradle
   docker
   golang
+  kubectl
+  pip
+  helm
 )
 
 
