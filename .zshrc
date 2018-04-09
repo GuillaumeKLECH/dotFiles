@@ -70,6 +70,8 @@ plugins=(
   kubectl
   pip
   helm
+  vault
+  node
 )
 
 
