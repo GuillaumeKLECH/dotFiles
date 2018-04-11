@@ -114,3 +114,7 @@ alias v='nvim'
 alias vd='nvim -d'
 
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home'
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
