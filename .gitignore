@@ -11,3 +11,5 @@
 .zcompdump*
 .zsh-update
 .zsh_history
+.vault-token
+.vault.sh

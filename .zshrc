@@ -72,6 +72,7 @@ plugins=(
   helm
   vault
   node
+  aws
 )
 
 
@@ -118,3 +119,5 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Ho
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
+
+source .vault.sh
