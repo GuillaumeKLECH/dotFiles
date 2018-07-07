@@ -1,7 +1,7 @@
 export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Applications/apache-maven-3.5.2/bin:$PATH
+export PATH=/Applications/apache-maven-3.5.2/bin:$HOME/Code/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/gklech/.oh-my-zsh
@@ -11,6 +11,8 @@ export ZSH=/Users/gklech/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_VCS_HIDE_TAGS=true
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -114,10 +116,16 @@ alias l='ls -CF'
 alias v='nvim'
 alias vd='nvim -d'
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home'
+export JAVA_HOME=`/usr/libexec/java_home`
 
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash
 
-source .vault.sh
+source $HOME/.vault.sh
+
+source $HOME/.exportAWS.sh
+
+kubeenv() {
+	export KUBECONFIG=$1	
+}
