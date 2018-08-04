@@ -17,6 +17,7 @@
 *.zip
 *.tar.gz
 *.rar
+!gradle/wrapper/gradle-wrapper.jar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -201,6 +202,7 @@ local.properties
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+.gradletasknamecache
 
 # CMake
 cmake-build-debug/

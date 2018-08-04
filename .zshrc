@@ -13,6 +13,13 @@ export ZSH=/Users/gklech/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_VCS_HIDE_TAGS=true
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=''
+
+POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -95,9 +102,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -126,6 +130,9 @@ source $HOME/.vault.sh
 
 source $HOME/.exportAWS.sh
 
-kubeenv() {
+ke() {
 	export KUBECONFIG=$1	
 }
+
+bindkey "\e\eOD" backward-word 
+bindkey "\e\eOC" forward-word
