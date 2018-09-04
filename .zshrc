@@ -82,6 +82,10 @@ plugins=(
   vault
   node
   aws
+  rust
+  cargo
+  npm
+  ng
 )
 
 
