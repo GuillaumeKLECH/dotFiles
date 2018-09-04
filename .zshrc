@@ -1,7 +1,7 @@
 export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Applications/apache-maven-3.5.2/bin:$HOME/Code/scripts:$PATH
+export PATH=/Applications/apache-maven-3.5.2/bin:$HOME/code/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/gklech/.oh-my-zsh
