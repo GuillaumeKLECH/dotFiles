@@ -16,6 +16,7 @@ if dein#load_state('/Users/gklech/.dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('scrooloose/nerdtree')
   call dein#add('sheerun/vim-polyglot')
 
@@ -41,3 +42,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 set nu rnu
+
+let g:airline_powerline_fonts = 1
