@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo xcode-select --install
+
 # Install Brew!
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
