@@ -1,36 +1,46 @@
-export TERM="xterm-256color"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Applications/apache-maven-3.5.2/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/gklech/.oh-my-zsh
+export ZSH="/Users/gklech/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME="robbyrussell"
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -42,6 +52,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -51,34 +63,57 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  mvn
-  gradle
-  docker
-  golang
-  kubectl
-  pip
-  helm
-  vault
-  node
+	asdf
+	git
+	dotenv
+	docker
+	kubectl
+	common-aliases
+	helm
 )
 
-
-export DEFAULT_USER=gklech 
 source $ZSH/oh-my-zsh.sh
+autoload -U compinit && compinit
+
+unsetopt inc_append_history
+unsetopt share_history
+setopt extendedglob
+
+#Powerlevel9k config
+#POWERLEVEL9K_MODE='nerdfont-complete'
+
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+#POWERLEVEL9K_SHORTEN_DELIMITER=""
+#POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION=''
 
 # User configuration
+
+# Alias
+alias v=nvim
+alias ll="ls -alh"
+alias gpm="gp -o merge_request.create"
+
+[ -f ~/.kubectl_aliases/.kubectl-aliases ] && source ~/.kubectl-aliases/.kubectl_aliases
+#function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
+alias kx="kubectx"
+alias kn="kubens"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -86,17 +121,14 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
-  export EDITOR='nvim'
-fi
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -104,17 +136,20 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#Aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias v='nvim'
-alias vd='nvim -d'
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home'
+DEFAULT_USER=gklech
+GITLAB_TOKEN=$(cat ~/.gitlab-token)
 
-. $HOME/.asdf/asdf.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-. $HOME/.asdf/completions/asdf.bash
+# Hook direnv into your shell.
+eval "$(asdf exec direnv hook zsh)"
+
+# A shortcut for asdf managed direnv.
+direnv() { asdf exec direnv "$@"; }
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
