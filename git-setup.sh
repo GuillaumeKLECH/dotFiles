@@ -5,6 +5,7 @@
 echo "Ensure your public key is registered at https://github.com/settings/keys"
 open "https://github.com/settings/key"
 read -p "Press RETURN to continue"
+ssh -T git@github.com
 
 echo "Ensure you created a personal access token with read permissions at https://github.com/settings/tokens/new"
 open "https://github.com/settings/tokens/new"
