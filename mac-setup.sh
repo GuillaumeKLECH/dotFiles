@@ -42,6 +42,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 # Install powerlevel10k 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# install dein (vim package manager)
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+# For example, we just use `~/.cache/dein` as installation directory
+sh ./installer.sh ~/.dein
 
 ################################################
 # ssh config
