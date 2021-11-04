@@ -16,7 +16,8 @@ brew install --cask  google-chrome \
 			        iterm2 \
 			        drawio \
 				clipy \
-				font-hack-nerd-font
+				font-hack-nerd-font \
+				defaultbrowser
 
 # Install packages for dev using Brew
 brew install 	zsh \
@@ -46,8 +47,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 # install dein (vim package manager)
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-# For example, we just use `~/.cache/dein` as installation directory
 sh ./installer.sh ~/.dein
+
+# link pinentry-mac to gpg
+echo "pinentry-program /usr/local/bin/pinentry-mac" >> $HOME/.gnupg/gpg-agent.conf
+
+# set default browser
+defaultbrowser chrome
 
 ################################################
 # ssh config
