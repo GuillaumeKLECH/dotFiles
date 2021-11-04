@@ -60,5 +60,5 @@ defaultbrowser chrome
 ################################################
 
 # Create SSH key if not exists
-[ -f ~/.ssh/id_rsa ] && echo "Skip SSH key creation" || ssh-keygen -t ed25519
+ssh-keygen -t ed25519
 
