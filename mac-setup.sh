@@ -5,19 +5,20 @@ sudo xcode-select --install
 # Install Brew!
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+brew tap homebrew/cask-fonts
+
 # Install casks for communication / utilities
 brew install --cask  google-chrome \
 			        slack \
 				whatsapp \
 				signal \
-			        zoomus \
-			        dashlane
+			        zoom \
+			        dashlane \
 				visual-studio-code \
 			        iterm2 \
 			        drawio \
 				clipy \
-				font-hack-nerd-font \
-				defaultbrowser
+				font-hack-nerd-font 
 
 # Install packages for dev using Brew
 brew install 	zsh \
@@ -32,7 +33,9 @@ brew install 	zsh \
 			direnv \
 			nvim \
 			ripgrep \
-			bat
+			bat \
+			defaultbrowser \
+			tree
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then
@@ -50,6 +53,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/.dein
 
 # link pinentry-mac to gpg
+mkdir ~/.gnupg/
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> $HOME/.gnupg/gpg-agent.conf
 
 # set default browser

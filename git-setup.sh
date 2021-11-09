@@ -3,7 +3,7 @@
 ################################################
 
 echo "Ensure your public key is registered at https://github.com/settings/keys"
-open "https://github.com/settings/key"
+open "https://github.com/settings/keys"
 read -p "Press RETURN to continue"
 ssh -T git@github.com
 
