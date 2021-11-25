@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo xcode-select --install
+#sudo xcode-select --install
 
 # Install Brew!
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -18,7 +18,8 @@ brew install --cask  google-chrome \
 			        iterm2 \
 			        drawio \
 				clipy \
-				font-hack-nerd-font 
+				font-hack-nerd-font \
+				session-manager-plugin
 
 # Install packages for dev using Brew
 brew install 	zsh \
