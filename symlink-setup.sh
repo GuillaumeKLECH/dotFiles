@@ -4,7 +4,7 @@ mkdir -p ~/.config/direnv
 
 ln -s -f $PWD/.config/nvim/init.vim ~/.config/nvim/init.vim
 
-ln -s -f $PWD/config/direnv/direnvrc ~/.config/direnv/direnvrc
+ln -s -f $PWD/.config/direnv/direnvrc ~/.config/direnv/direnvrc
 
 
 ln -s -f $PWD/.gitconfig ~/
