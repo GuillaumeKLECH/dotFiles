@@ -79,6 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	asdf
+	aws
 	git
 	dotenv
 	docker
@@ -88,7 +89,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 unsetopt inc_append_history
 unsetopt share_history

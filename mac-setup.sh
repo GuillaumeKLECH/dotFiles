@@ -19,7 +19,8 @@ brew install --cask  google-chrome \
 			        drawio \
 				clipy \
 				font-hack-nerd-font \
-				session-manager-plugin
+				session-manager-plugin \
+				adobe-acrobat-reader
 
 # Install packages for dev using Brew
 brew install 	zsh \
