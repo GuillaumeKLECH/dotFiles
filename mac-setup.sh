@@ -20,7 +20,8 @@ brew install --cask  google-chrome \
 				clipy \
 				font-hack-nerd-font \
 				session-manager-plugin \
-				adobe-acrobat-reader
+				adobe-acrobat-reader \
+				postman
 
 # Install packages for dev using Brew
 brew install 	zsh \

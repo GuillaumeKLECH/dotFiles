@@ -50,3 +50,5 @@
 	cmd = nvim -d $LOCAL $REMOTE $MERGED
 	trustExitCode = true
 [commit]
+[pull]
+	rebase = false
