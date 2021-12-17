@@ -82,7 +82,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	asdf
 	aws
 	git
 	dotenv
@@ -91,6 +90,9 @@ plugins=(
 	common-aliases
 	helm
 )
+
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 source $ZSH/oh-my-zsh.sh
 autoload -Uz compinit && compinit
@@ -149,6 +151,8 @@ DEFAULT_USER=gklech
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+
 # Hook direnv into your shell.
 eval "$(asdf exec direnv hook zsh)"
 
@@ -170,4 +174,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
 
