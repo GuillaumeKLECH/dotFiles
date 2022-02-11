@@ -38,7 +38,8 @@ brew install 	zsh \
 			ripgrep \
 			bat \
 			defaultbrowser \
-			tree
+			tree \
+			pandoc
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then

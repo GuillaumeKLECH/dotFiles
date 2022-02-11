@@ -89,6 +89,7 @@ plugins=(
 	kubectl
 	common-aliases
 	helm
+	terraform
 )
 
 
@@ -175,4 +176,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Custom functions
 
+function mdTodocx() {
+	pandoc -o $2 -f markdown -t docx $1
+}
