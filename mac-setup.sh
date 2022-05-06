@@ -21,6 +21,7 @@ brew install --cask  google-chrome \
 				font-hack-nerd-font \
 				session-manager-plugin \
 				adobe-acrobat-reader \
+				mambaforge \
 				postman
 
 # Install packages for dev using Brew
@@ -39,7 +40,8 @@ brew install 	zsh \
 			bat \
 			defaultbrowser \
 			tree \
-			pandoc
+			pandoc \
+			cheat
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then
