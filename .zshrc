@@ -83,13 +83,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	aws
+	conda-zsh-completion
 	git
 	dotenv
 	docker
 	kubectl
 	common-aliases
 	helm
+	macos
+	web-search
 	terraform
+	zsh-autosuggestions
 )
 
 
