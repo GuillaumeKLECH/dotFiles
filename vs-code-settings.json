@@ -1,0 +1,30 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
+  "diffEditor.codeLens": true,
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.formatting.provider": "black",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.env.osx": {
+    "PATH": ""
+}
+}
+
