@@ -92,6 +92,7 @@ plugins=(
 	helm
 	macos
 	web-search
+	rust
 	terraform
 	zsh-autosuggestions
 )
