@@ -128,6 +128,10 @@ alias gpm="gp -o merge_request.create"
 alias kx="kubectx"
 alias kn="kubens"
 
+#brew aliases
+alias bo="brew outdated && brew outdated --cask --greedy --verbose"
+alias bu="brew upgrade && brew upgrade --cask --greedy"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -179,6 +183,10 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh" ]; then
+    . "/opt/homebrew/Caskroom/mambaforge/base/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 # Custom functions
