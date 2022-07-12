@@ -41,7 +41,8 @@ brew install 	zsh \
 			defaultbrowser \
 			tree \
 			pandoc \
-			cheat
+			cheat \
+			git-delta
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then
