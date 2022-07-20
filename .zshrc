@@ -195,3 +195,10 @@ fi
 function mdTodocx() {
 	pandoc -o $2 -f markdown -t docx $1
 }
+
+function genUnixPwd() {
+	PASSWD=$(openssl rand -base64 32)
+	printf "Pwd : ${PASSWD}\n"
+	CRYPT_PASSWD=$(docker run --rm -ti alpine:latest mkpasswd -m sha512 $PASSWD)
+	printf "Crypt pwd : ${CRYPT_PASSWD}\n"
+}
