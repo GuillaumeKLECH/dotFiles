@@ -13,7 +13,6 @@ brew install --cask  google-chrome \
 				whatsapp \
 				signal \
 			        zoom \
-			        dashlane \
 				visual-studio-code \
 			        iterm2 \
 			        drawio \
