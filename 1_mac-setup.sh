@@ -48,7 +48,8 @@ brew install 	zsh \
 			starship \
 			dust \
 			sd \
-			procs
+			procs \
+			tealdeer
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then
