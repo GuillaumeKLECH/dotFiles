@@ -44,3 +44,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 set nu rnu
 
 let g:airline_powerline_fonts = 1
+let g:csv_no_conceal = 1

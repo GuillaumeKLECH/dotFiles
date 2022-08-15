@@ -45,7 +45,10 @@ brew install 	zsh \
 			git-delta \
 			git-crypt \
 			exa \
-			starship
+			starship \
+			dust \
+			sd \
+			procs
 
 # Make zsh default shell
 if [ ! "$SHELL" -e "/bin/zsh" ]; then

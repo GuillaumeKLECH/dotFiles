@@ -1,6 +1,6 @@
 [user]
 	name = Guillaume KLECH
-	email = guillaume.klech@gmail.com
+	email = 33962452+GuillaumeKLECH@users.noreply.github.com
 [alias]
 	co = checkout
 	st = status
@@ -50,3 +50,8 @@
 	rebase = false
 [push]
 	followTags = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
