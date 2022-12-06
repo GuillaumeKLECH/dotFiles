@@ -133,6 +133,8 @@ alias kn="kubens"
 alias bo="brew outdated && brew outdated --cask --greedy --verbose"
 alias bu="brew upgrade && brew upgrade --cask --greedy"
 
+alias uuidgen='uuidgen | tr "[:upper:]" "[:lower:]"'
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -202,3 +204,7 @@ function genUnixPwd() {
 	CRYPT_PASSWD=$(docker run --rm -ti alpine:latest mkpasswd -m sha512 $PASSWD)
 	printf "Crypt pwd : ${CRYPT_PASSWD}\n"
 }
+
+
+#env variables
+export AWS_CLI_AUTO_PROMPT=on-partial
