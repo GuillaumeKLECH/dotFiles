@@ -1,5 +1,5 @@
 # File: ~/.config/direnv/direnvrc
-source "$(asdf direnv hook asdf)"
+
 
 layout_conda() {
   local ACTIVATE="/opt/homebrew/Caskroom/mambaforge/base/bin/activate"
